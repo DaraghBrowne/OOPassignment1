@@ -5,7 +5,9 @@ class LoadCircles
   float radius;
   float angle;
   float frequency = 3;
-  PFont f = createFont("Stencil",60); //Create Font;
+  PFont f = createFont("Stencil", 60); //Create Font;
+  int bx = 20;
+  int by = 40;
 
   LoadCircles(float cx, float cy, float radius) {
     this.cx = cx;
@@ -35,13 +37,22 @@ class LoadCircles
     stroke(95, 255, 245);
     fill(95, 255, 245);
     ellipse (px, py, 40, 40);
-    angle -= frequency;
+    angle += frequency;
   }
-  
-  void loadText(){
+
+  void loadText() {
     textFont(f);
     textAlign(CENTER);
     fill(95, 255, 245);
-    text("LOADING...",width/2,150);
+    text("LOADING...", width/2, 150);
+  }
+
+  void loadBoxes() {
+    fill(95, 255, 245);
+    rect(00, 600, bx, by);
+    bx += 2;
+    if (bx==width) {
+      gameState = 2;
+    }
   }
 }
