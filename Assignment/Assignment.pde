@@ -7,6 +7,7 @@ void setup()
 {
   size(800, 800);
   background(0);
+  smooth();
   load1 = new LoadCircles(cx1, cy1, radius1);
 }
 
@@ -18,6 +19,8 @@ void draw()
 {
 
   background(0);
+   
   load1.display();
   load1.rotateCircle();
+  load1.loadText();
 }

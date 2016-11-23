@@ -5,6 +5,7 @@ class LoadCircles
   float radius;
   float angle;
   float frequency = 3;
+  PFont f = createFont("Stencil",60); //Create Font;
 
   LoadCircles(float cx, float cy, float radius) {
     this.cx = cx;
@@ -35,5 +36,12 @@ class LoadCircles
     fill(95, 255, 245);
     ellipse (px, py, 40, 40);
     angle -= frequency;
+  }
+  
+  void loadText(){
+    textFont(f);
+    textAlign(CENTER);
+    fill(95, 255, 245);
+    text("LOADING...",width/2,150);
   }
 }
