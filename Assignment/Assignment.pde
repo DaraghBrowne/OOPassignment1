@@ -20,7 +20,7 @@ LoadCircles load1;
 Clock clock1;
 WaveGraph wave1;
 int frame;
-int gameState = 1;
+int gameState = 2;
 
 void draw()
 {
@@ -36,8 +36,24 @@ void draw()
   {
     background(0);
     clock1.display();
-    wave1.calcWave();
-    wave1.renderWave();
+    
+    rect(10,(height/8)*5.75,80,30);
+    
+    //speed up graph if mouse is in danger box
+    if((mouseX>10&& mouseX<90)&&(mouseY>((height/8)*5.75)&& mouseY<(height/8*5.75)+30))
+    {
+      fill(221,0, 72);
+      rect(10,(height/8)*5.75,80,30);
+      wave1.calcWave(.2);
+      wave1.renderWave(color(221,0, 72));
+    }
+    else
+    {
+      fill(57,255, 20);
+      rect(10,(height/8)*5.75,80,30);
+      wave1.calcWave(.08);
+      wave1.renderWave(color(57,255, 20));
+    }
   }
  
 }

@@ -11,6 +11,7 @@ class Clock{
   
   void display() {
     textFont(f);
+    fill(255);
     textSize(fontSize);
     textAlign(CENTER);
     text (hour() + ":" + nf(minute(), 2) + ":" + nf(second(), 2), x, y);
