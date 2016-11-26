@@ -25,4 +25,11 @@ class WaveGraph
       ellipse(x*xspacing, (height)-100+yvalues[x], 10, 10);
     }
   }
+  void renderWave2(color c) {
+    noStroke();
+    fill(c);
+    for (int x = 0; x < yvalues.length; x++) {
+      ellipse(x*xspacing*2, (height)-100+yvalues[x], 10, 10);
+    }
+  }
 }

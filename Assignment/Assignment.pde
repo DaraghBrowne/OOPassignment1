@@ -42,10 +42,11 @@ void draw()
     //speed up graph if mouse is in danger box
     if((mouseX>10&& mouseX<90)&&(mouseY>((height/8)*5.75)&& mouseY<(height/8*5.75)+30))
     {
-      fill(221,0, 72);
+      fill(color(random(50,250),random(50,100), random(200,250)));
       rect(10,(height/8)*5.75,80,30);
       wave1.calcWave(.2);
-      wave1.renderWave(color(221,0, 72));
+      wave1.renderWave(color(random(50,250),random(50,100), random(200,250)));
+      wave1.renderWave2(color(random(50,250),random(50,100), random(200,250)));
     }
     else
     {
