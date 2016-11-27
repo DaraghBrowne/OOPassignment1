@@ -13,6 +13,14 @@ void setup()
   load1 = new LoadCircles(cx1, cy1, radius1);
   clock1 = new Clock(40, (width/5)*4, (height/5)*.5);
   wave1 = new WaveGraph();
+  
+  //for orbiter circles
+  float radDiv = min(width, height);
+  for (int i = 1; i<=orbiters.length; i++) {
+    Orbiter o = new Orbiter(width/2, height/3, random(360), random(30, 180), random(90, 540), radDiv);
+    o.radius = (radDiv * ((float)i/orbiters.length)/2);
+    orbiters[i - 1] = o;
+  }
 }
 
 float radius1 = 150;
@@ -20,7 +28,11 @@ LoadCircles load1;
 Clock clock1;
 WaveGraph wave1;
 int frame;
+//initial gamestate(starting screen)
 int gameState = 2;
+
+int count = 10;
+Orbiter[] orbiters = new Orbiter[count];
 
 void draw()
 {
@@ -35,26 +47,17 @@ void draw()
   if(gameState==2)
   {
     background(0);
+    noFill();
+    
+    
+    for (Orbiter o : orbiters) {
+    o.update();
+    o.display();
+    }
+    
+    
     clock1.display();
-    
-    rect(10,(height/8)*5.75,80,30);
-    
-    //speed up graph if mouse is in danger box
-    if((mouseX>10&& mouseX<90)&&(mouseY>((height/8)*5.75)&& mouseY<(height/8*5.75)+30))
-    {
-      fill(color(random(50,250),random(50,100), random(200,250)));
-      rect(10,(height/8)*5.75,80,30);
-      wave1.calcWave(.2);
-      wave1.renderWave(color(random(50,250),random(50,100), random(200,250)));
-      wave1.renderWave2(color(random(50,250),random(50,100), random(200,250)));
-    }
-    else
-    {
-      fill(57,255, 20);
-      rect(10,(height/8)*5.75,80,30);
-      wave1.calcWave(.08);
-      wave1.renderWave(color(57,255, 20));
-    }
-  }
+    wave1.displayWave();
  
+  }
 }

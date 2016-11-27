@@ -32,4 +32,23 @@ class WaveGraph
       ellipse(x*xspacing*2, (height)-100+yvalues[x], 10, 10);
     }
   }
+  
+  void displayWave(){
+    //speed up graph if mouse is in danger box
+    if(mouseY>((height/8)*5.75)&& mouseY<(height/8*5.75)+30)
+    {
+      fill(color(random(50,250),random(50,100), random(200,250)));
+      rect(0,(height/8)*5.75,width,30);
+      calcWave(.2);
+      renderWave(color(random(50,250),random(50,100), random(200,250)));
+      wave1.renderWave2(color(random(50,250),random(50,100), random(200,250)));
+    }
+    else
+    {
+      fill(57,255, 20);
+      rect(0,(height/8)*5.75,width,30);
+      calcWave(.08);
+      renderWave(color(57,255, 20));
+    }
+  }
 }
