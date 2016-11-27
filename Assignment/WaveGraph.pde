@@ -37,6 +37,7 @@ class WaveGraph
     //speed up graph if mouse is in danger box
     if(mouseY>((height/8)*5.75)&& mouseY<(height/8*5.75)+30)
     {
+      noStroke();
       fill(color(random(50,250),random(50,100), random(200,250)));
       rect(0,(height/8)*5.75,width,30);
       calcWave(.2);
@@ -45,6 +46,7 @@ class WaveGraph
     }
     else
     {
+      noStroke();
       fill(57,255, 20);
       rect(0,(height/8)*5.75,width,30);
       calcWave(.08);

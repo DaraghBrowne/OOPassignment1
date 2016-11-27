@@ -15,15 +15,15 @@ class Orbiter
     this.radius = radius;
     this.sweep = sweep;
   }
-  
+
   void update() {
     angle += rotationSpeed / 60;
   }
-  
+
   void display() {
-    
-    
-    stroke(255, 255, 100);
+
+    strokeWeight(5);
+    stroke(0, 255, 255);
     arc(centerX, centerY, radius, radius, radians(angle), radians(angle + sweep));
   }
 }

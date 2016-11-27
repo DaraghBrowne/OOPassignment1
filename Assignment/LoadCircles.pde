@@ -51,8 +51,13 @@ class LoadCircles
     fill(95, 255, 245);
     rect(00, 600, bx, by);
     bx += 2;
-    if (bx==width) {
+    if (bx>=width) {
+      text("ANY KEY TO CONTINUE", width/2, (height/10)*9);
+      
+      if(keyPressed==true)
+      {
       gameState = 2;
+      }
     }
   }
 }

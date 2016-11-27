@@ -17,7 +17,7 @@ void setup()
   //for orbiter circles
   float radDiv = min(width, height);
   for (int i = 1; i<=orbiters.length; i++) {
-    Orbiter o = new Orbiter(width/2, height/3, random(360), random(30, 180), random(90, 540), radDiv);
+    Orbiter o = new Orbiter(width/2, (height/3)+85, random(360), random(30, 180), random(90, 540), radDiv);
     o.radius = (radDiv * ((float)i/orbiters.length)/2);
     orbiters[i - 1] = o;
   }
@@ -29,7 +29,7 @@ Clock clock1;
 WaveGraph wave1;
 int frame;
 //initial gamestate(starting screen)
-int gameState = 2;
+int gameState = 1;
 
 int count = 10;
 Orbiter[] orbiters = new Orbiter[count];
@@ -47,9 +47,10 @@ void draw()
   if(gameState==2)
   {
     background(0);
+    fill(200,200,200);
+    rect(0,(height/8),width,30);
+    
     noFill();
-    
-    
     for (Orbiter o : orbiters) {
     o.update();
     o.display();
