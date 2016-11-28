@@ -5,7 +5,7 @@
 
 void setup()
 {
-  size(1000, 800);
+  size(1000, 800,P3D);
   background(0);
   smooth();
   
@@ -34,7 +34,7 @@ WaveGraph wave1;
 PageSetup page2;
 
 //initial gamestate(starting screen)
-int gameState = 2;
+int gameState = 1;
 
 //amount of arcs in orbiter
 int count = 15;
@@ -56,16 +56,13 @@ void draw()
     page2.display();
     page2.rightSide();
     
-    if(frame%30<15)
-    {
     page2.leftSide();
-    }
-    if(frame%60==5)
+    if(frame%6==1)
     {
-    j++;
-      if(j==5)
+      j++;
+      if(j==6)
       {
-        j = 0;
+        j=0;
       }
     }
     

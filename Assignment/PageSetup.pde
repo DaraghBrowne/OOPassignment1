@@ -13,9 +13,9 @@ class PageSetup
   {
 
     noStroke();
-    float barWidth = (width*1/5)/5;
-    fill(random(80, 120), random(80, 120), random(80, 120));
-    rect(j*barWidth, (height/8)+30, barWidth, 400*(j+1)/5 );
+    float barWidth = (width*1/5)/6+.5;
+    fill(0, map(j,0,6,0,255), 255);
+    rect(j*barWidth, (height/8)+30, barWidth, 445*(j+1)/6 );
   }
   
   void rightSide()
@@ -24,7 +24,7 @@ class PageSetup
   fill(255);
   translate(width*0.9, height*0.3);
   rotate(frameCount / 60.0);
-  star(0, 0, 80, 85, 20); 
+  star(0, 0, 80, 85, int(random(10,30))); 
   popMatrix();
   
   pushMatrix();
@@ -38,7 +38,7 @@ class PageSetup
   fill(255);
   translate(width*0.9, height*0.6);
   rotate(frameCount / 60.0);
-  star(0, 0, 80, 85, 20); 
+  star(0, 0, 80, 85, int(random(10,30))); 
   popMatrix();
   
   pushMatrix();
