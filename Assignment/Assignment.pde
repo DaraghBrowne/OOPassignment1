@@ -5,7 +5,7 @@
 
 void setup()
 {
-  size(800, 800);
+  size(1000, 800);
   background(0);
   smooth();
   
@@ -13,6 +13,7 @@ void setup()
   load1 = new LoadCircles(cx1, cy1, radius1);
   clock1 = new Clock(40, (width/5)*4, (height/5)*.5);
   wave1 = new WaveGraph();
+  page2 = new PageSetup();
   
   //for orbiter circles
   float radDiv = min(width, height);
@@ -24,12 +25,15 @@ void setup()
 }
 
 float radius1 = 150;
+int frame = 0;
+
 LoadCircles load1;
 Clock clock1;
 WaveGraph wave1;
-int frame;
+PageSetup page2;
+
 //initial gamestate(starting screen)
-int gameState = 1;
+int gameState = 2;
 
 int count = 10;
 Orbiter[] orbiters = new Orbiter[count];
@@ -47,8 +51,7 @@ void draw()
   if(gameState==2)
   {
     background(0);
-    fill(200,200,200);
-    rect(0,(height/8),width,30);
+    page2.display();
     
     noFill();
     for (Orbiter o : orbiters) {
@@ -59,6 +62,7 @@ void draw()
     
     clock1.display();
     wave1.displayWave();
- 
+    
+    frame++;
   }
 }
