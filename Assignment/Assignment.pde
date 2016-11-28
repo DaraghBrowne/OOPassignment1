@@ -54,7 +54,7 @@ void draw()
   {
     background(0);
     page2.display();
-    
+    page2.rightSide();
     
     if(frame%30<15)
     {

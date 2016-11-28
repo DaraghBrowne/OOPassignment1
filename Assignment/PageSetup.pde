@@ -12,11 +12,55 @@ class PageSetup
   void leftSide()
   {
 
-   // for (int i = 0; i<5; i++ ) {
-      noStroke();
-      float barWidth = (width*1/5)/5;
-      fill(random(80, 120), random(80, 120), random(80, 120));
-      rect(j*barWidth, (height/8)+30, barWidth,400*(j+1)/5 );
-   // }
+    noStroke();
+    float barWidth = (width*1/5)/5;
+    fill(random(80, 120), random(80, 120), random(80, 120));
+    rect(j*barWidth, (height/8)+30, barWidth, 400*(j+1)/5 );
   }
+  
+  void rightSide()
+  {
+  pushMatrix();
+  fill(255);
+  translate(width*0.9, height*0.3);
+  rotate(frameCount / 60.0);
+  star(0, 0, 80, 85, 20); 
+  popMatrix();
+  
+  pushMatrix();
+  fill(map(mouseY,0,height,0,255),map(mouseX,0,width,0,255),150);
+  translate(width*0.9, height*0.3);
+  rotate(frameCount / 60.0);
+  star(0, 0, 40, 50, 15); 
+  popMatrix();
+  
+  pushMatrix();
+  fill(255);
+  translate(width*0.9, height*0.6);
+  rotate(frameCount / 60.0);
+  star(0, 0, 80, 85, 20); 
+  popMatrix();
+  
+  pushMatrix();
+  fill(map(mouseX,0,height,0,255),map(mouseY,0,width,0,255),150);
+  translate(width*0.9, height*0.6);
+  rotate(frameCount / 60.0);
+  star(0, 0, 40, 50, 15); 
+  popMatrix();
+  }
+  
+  void star(float x, float y, float radius1, float radius2, int npoints) {
+  float angle = TWO_PI / npoints;
+  float halfAngle = angle/2.0;
+  beginShape();
+  for (float a = 0; a < TWO_PI; a += angle) {
+    float sx = x + cos(a) * radius2;
+    float sy = y + sin(a) * radius2;
+    vertex(sx, sy);
+    sx = x + cos(a+halfAngle) * radius1;
+    sy = y + sin(a+halfAngle) * radius1;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}
 }
