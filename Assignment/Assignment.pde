@@ -18,7 +18,7 @@ void setup()
   //for orbiter circles
   float radDiv = min(width, height);
   for (int i = 1; i<=orbiters.length; i++) {
-    Orbiter o = new Orbiter(width/2, (height/3)+85, random(360), random(30, 180), random(90, 540), radDiv);
+    Orbiter o = new Orbiter(width/2, (height/3)+85, random(360), random(90, 540), radDiv);
     o.radius = (radDiv * ((float)i/orbiters.length)/2);
     orbiters[i - 1] = o;
   }
@@ -26,6 +26,7 @@ void setup()
 
 float radius1 = 150;
 int frame = 0;
+int j= 0;
 
 LoadCircles load1;
 Clock clock1;
@@ -35,7 +36,8 @@ PageSetup page2;
 //initial gamestate(starting screen)
 int gameState = 2;
 
-int count = 10;
+//amount of arcs in orbiter
+int count = 15;
 Orbiter[] orbiters = new Orbiter[count];
 
 void draw()
@@ -52,6 +54,20 @@ void draw()
   {
     background(0);
     page2.display();
+    
+    
+    if(frame%30<15)
+    {
+    page2.leftSide();
+    }
+    if(frame%60==5)
+    {
+    j++;
+      if(j==5)
+      {
+        j = 0;
+      }
+    }
     
     noFill();
     for (Orbiter o : orbiters) {

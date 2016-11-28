@@ -1,19 +1,16 @@
 class Orbiter
 {
   float centerX, centerY;
-
-  float sweep = 45;
   float angle;
   float rotationSpeed;
   float radius;
 
-  public Orbiter(float centerX, float centerY, float startAngle, float sweep, float rotationSpeed, float radius) {
+  public Orbiter(float centerX, float centerY, float startAngle, float rotationSpeed, float radius) {
     this.centerX = centerX;
     this.centerY = centerY;
     angle = startAngle;
     this.rotationSpeed = rotationSpeed;
     this.radius = radius;
-    this.sweep = sweep;
   }
 
   void update() {
@@ -24,6 +21,6 @@ class Orbiter
 
     strokeWeight(5);
     stroke(0, 255, 255);
-    arc(centerX, centerY, radius, radius, radians(angle), radians(angle + sweep));
+    arc(centerX, centerY, radius, radius, radians(angle), radians(angle + 90));
   }
 }

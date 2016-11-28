@@ -31,6 +31,9 @@ class WaveGraph
     for (int x = 0; x < yvalues.length; x++) {
       ellipse(x*xspacing*2, (height)-100+yvalues[x], 10, 10);
     }
+    for (int x = 0; x < yvalues.length; x++) {
+      ellipse(x*xspacing*4, (height)-100+yvalues[x], 10, 10);
+    }
   }
   
   void displayWave(){
@@ -42,7 +45,7 @@ class WaveGraph
       rect(0,(height/8)*5.75,width,30);
       calcWave(.2);
       renderWave(color(random(50,250),random(50,100), random(200,250)));
-      wave1.renderWave2(color(random(50,250),random(50,100), random(200,250)));
+      renderWave2(color(random(50,250),random(50,100), random(200,250)));
     }
     else
     {
