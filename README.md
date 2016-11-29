@@ -2,6 +2,7 @@
 First OOP assignment - SciFi UI
 Daragh Browne
 C15396706
+[![Video](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=XD6Iuo7OLjM&t=2s)
 
 This is my submission for the OOP assignment due 29/11/2016.
 When started a loading screen displays. This features a neat looking set of circles with a smaller circle orbitting around the outermost circle. As this takes place a loading bar transverses across the bottom of the screen. Once this bar hits the edge of the window, the text changes from "LOADING" to "PRESS ANY KEY TO CONTINUE". With this prompt the user presses a key and continues to the main screen.
