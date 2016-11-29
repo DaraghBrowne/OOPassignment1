@@ -5,7 +5,7 @@ class Orbiter
   float rotationSpeed;
   float radius;
 
-  public Orbiter(float centerX, float centerY, float startAngle, float rotationSpeed, float radius) {
+  Orbiter(float centerX, float centerY, float startAngle, float rotationSpeed, float radius) {
     this.centerX = centerX;
     this.centerY = centerY;
     angle = startAngle;
